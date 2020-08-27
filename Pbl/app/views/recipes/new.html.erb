@@ -1,0 +1,13 @@
+<%= form_for(@recipe, url: recipes_path) do |f| %>
+    <p><%= f.label :"レシピ登録"%></p>
+    <%= render "devise/shared/error_messages", resource: @recipe %>
+    <p><lavel>title</lavel><%= f.text_field :title %></p>
+    <p><lavel>description</lavel><%= f.text_area :description %></p>
+    <p><lavel>steps</lavel><%= f.text_area :steps %></p>
+    <p><lavel>ingredient</lavel><%= f.text_area :ingredient %></p>
+    
+
+    <p><%= f.submit "登録" %></p>
+<% end %>
+
+<%= link_to "レシピ一覧へ戻る", recipes_path %>

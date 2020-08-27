@@ -1,0 +1,13 @@
+<h1>動画詳細</h1>
+
+<p>動画名:<%= @video.title %></p>
+<p>説明:<%= @video.description %></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<p>レシピ名:<%= @recipe.title %></p>
+<p>説明:<%= @recipe.description %></p>
+<p>手順:<%= @recipe.steps %></p>
+<p>材料:<%= @recipe.ingredient %></p>
+
+
+<%= link_to "動画を修正する", edit_video_path(@video) %>
+<%= link_to "動画一覧に戻る", videos_path %>

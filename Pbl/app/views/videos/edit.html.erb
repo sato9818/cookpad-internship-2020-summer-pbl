@@ -1,0 +1,13 @@
+<%= form_for(@video, url: video_path(@video)) do |f| %>
+    <p><%= f.label :"修正"%></p>
+    <%= render "devise/shared/error_messages", resource: @video %>
+    <p><lavel>title</lavel><%= f.text_field :title %></p>
+    <p><lavel>description</lavel><%= f.text_area :description %></p>
+    <p><lavel>recipe_id</lavel><%= f.text_field :recipe_id %></p>
+    <p><lavel>youtube_url</lavel><%= f.text_field :url %></p>
+    
+
+    <p><%= f.submit "修正" %></p>
+<% end %>
+
+<%= link_to "レシピ一覧へ戻る", videos_path %>

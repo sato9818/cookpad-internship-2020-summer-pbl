@@ -1,0 +1,1215 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200826021123)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200826021123_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20200826021123_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20200826021123_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200826021123"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-26 02:12:27.976732"], ["updated_at", "2020-08-26 02:12:27.976732"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-08-26 11:13:04 +0900
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (114.6ms)
+Completed 200 OK in 441ms (Views: 316.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-26 11:13:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/devise-4.7.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/devise-4.7.2/app/views/devise/sessions/new.html.erb within layouts/application (231.9ms)
+Completed 200 OK in 1770ms (Views: 1542.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-26 11:17:39 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (212.8ms)
+Completed 200 OK in 1763ms (Views: 1614.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-08-26 11:17:44 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (170.3ms)
+Completed 200 OK in 900ms (Views: 878.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-26 11:17:47 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 799ms (Views: 790.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-08-26 11:17:49 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (357.5ms)
+Completed 200 OK in 1300ms (Views: 1295.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-08-26 11:19:06 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 297ms (Views: 295.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-08-26 17:21:21 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRecipes (20200826022232)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200826022232_create_recipes.rb:3
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "description" text NOT NULL, "steps" text NOT NULL, "ingredient" text NOT NULL, "creator_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200826022232_create_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200826022232"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateIngredients (20200826025105)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200826025105_create_ingredients.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200826025105"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateVideos (20200826075114)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "videos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "description" text, "recipe_id" integer, "url" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200826075114_create_videos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200826075114"]]
+  ↳ bin/rails:9
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRecipesVideos (20200826080029)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "recipes_videos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer NOT NULL, "video_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200826080029_create_recipes_videos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200826080029"]]
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (6.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/sign_up" for ::1 at 2020-08-26 17:23:44 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (32.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (399.0ms)
+Completed 200 OK in 7775ms (Views: 7264.6ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2020-08-26 17:52:35 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7HHUy+NQMAOrL8/DZVW9In0HoXzcw+w+t04dztKZGrJxchIL9Fp7itPiYVpkgflggtDtC2eEEKJaGFNltJnBCQ==", "user"=>{"name"=>"テスト太郎", "email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新規登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test@example.com"], ["encrypted_password", "$2a$12$7ulMVDjFutUcCIHiuADp2uX.1e4N1nFtKQ8hae9sca9wazp6CE68W"], ["name", "テスト太郎"], ["created_at", "2020-08-26 08:52:36.573205"], ["updated_at", "2020-08-26 08:52:36.573205"]]
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (49.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 1008ms (ActiveRecord: 51.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-26 17:52:36 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 38ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-26 17:52:51 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 35ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-26 17:52:52 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (11.4ms)
+Completed 200 OK in 82ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-26 17:53:05 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (64.9ms)
+Completed 200 OK in 412ms (Views: 328.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/recipes/new" for ::1 at 2020-08-26 17:53:13 +0900
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered recipes/new.html.erb within layouts/application (283.9ms)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `ingredients' for #<Recipe:0x00007fe363226de0>
+Did you mean?  ingredient
+               ingredient=
+               ingredient?
+               ingredient_was):
+    4:     <p><lavel>title</lavel><%= f.text_field :title %></p>
+    5:     <p><lavel>description</lavel><%= f.text_area :description %></p>
+    6:     <p><lavel>steps</lavel><%= f.text_area :steps %></p>
+    7:     <p><lavel>ingredients</lavel><%= f.text_area :ingredients %></p>
+    8:     
+    9: 
+   10:     <p><%= f.submit "登録" %></p>
+  
+app/views/recipes/new.html.erb:7:in `block in _app_views_recipes_new_html_erb___2129451727073360888_70307227841960'
+app/views/recipes/new.html.erb:1:in `_app_views_recipes_new_html_erb___2129451727073360888_70307227841960'
+Started GET "/recipes/new" for ::1 at 2020-08-26 17:53:48 +0900
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (32.6ms)
+  Rendered recipes/new.html.erb within layouts/application (196.5ms)
+Completed 200 OK in 971ms (Views: 869.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2020-08-26 17:54:33 +0900
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered recipes/new.html.erb within layouts/application (157.8ms)
+Completed 200 OK in 871ms (Views: 565.7ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/recipes" for ::1 at 2020-08-26 17:55:47 +0900
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/8MIjrFmajH0dUiYb36gbquU9KKqYF+7Hty3k7xrqB9iwM5OpmwhuIy45gFuquQsVEO41REnoyfzivk42mtzpA==", "recipe"=>{"title"=>"test", "description"=>"testtestetstestets", "steps"=>"1. cut\r\n2. complete", "ingredient"=>"1. apple"}, "commit"=>"登録"}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: staff):
+  
+app/controllers/recipes_controller.rb:26:in `recipe_params'
+app/controllers/recipes_controller.rb:11:in `create'
+Started POST "/recipes" for ::1 at 2020-08-26 17:56:06 +0900
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/8MIjrFmajH0dUiYb36gbquU9KKqYF+7Hty3k7xrqB9iwM5OpmwhuIy45gFuquQsVEO41REnoyfzivk42mtzpA==", "recipe"=>{"title"=>"test", "description"=>"testtestetstestets", "steps"=>"1. cut\r\n2. complete", "ingredient"=>"1. apple"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/recipes_controller.rb:13
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "description", "steps", "ingredient", "creator_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", "testtestetstestets"], ["steps", "1. cut\r\n2. complete"], ["ingredient", "1. apple"], ["creator_id", 1], ["created_at", "2020-08-26 08:56:06.829225"], ["updated_at", "2020-08-26 08:56:06.829225"]]
+  ↳ app/controllers/recipes_controller.rb:13
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/recipes_controller.rb:13
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 268ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-26 17:56:06 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 251ms (Views: 246.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/1" for ::1 at 2020-08-26 17:56:08 +0900
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:21
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 707ms (Views: 661.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/1" for ::1 at 2020-08-27 10:34:18 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (29.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:21
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1901ms (Views: 1459.7ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 10:34:31 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 321ms (Views: 231.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 10:34:35 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (24.5ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 1412ms (Views: 1170.0ms | ActiveRecord: 95.6ms)
+
+
+Started GET "/videos/new" for ::1 at 2020-08-27 10:34:42 +0900
+Processing by VideosController#new as HTML
+  Rendering videos/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered videos/new.html.erb within layouts/application (509.8ms)
+Completed 200 OK in 949ms (Views: 887.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/videos" for ::1 at 2020-08-27 10:36:26 +0900
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+/y34xoc151Zr2M71IgQULWZpA3/aR71qW0bVBPBh8dm/3EjDRacFCFizaLVXFQSSk7oekQu4mlEO1X/dcFcfA==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"", "url"=>"https://www.youtube.com/watch?v=9oW727OjSAA&t=1725s"}, "commit"=>"登録"}
+Unpermitted parameters: :utf8, :authenticity_token, :video, :commit
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 1)):
+  
+app/controllers/videos_controller.rb:25:in `video_params'
+app/controllers/videos_controller.rb:15:in `create'
+Started POST "/videos" for ::1 at 2020-08-27 10:37:50 +0900
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+/y34xoc151Zr2M71IgQULWZpA3/aR71qW0bVBPBh8dm/3EjDRacFCFizaLVXFQSSk7oekQu4mlEO1X/dcFcfA==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"", "url"=>"https://www.youtube.com/watch?v=9oW727OjSAA&t=1725s"}, "commit"=>"登録"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:16
+Completed 500 Internal Server Error in 529ms (ActiveRecord: 29.9ms)
+
+
+  
+NoMethodError (undefined method `creator_id=' for #<Video:0x00007fae140a4280>
+Did you mean?  created_at=):
+  
+app/controllers/videos_controller.rb:16:in `create'
+Started POST "/videos" for ::1 at 2020-08-27 10:38:34 +0900
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+/y34xoc151Zr2M71IgQULWZpA3/aR71qW0bVBPBh8dm/3EjDRacFCFizaLVXFQSSk7oekQu4mlEO1X/dcFcfA==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"", "url"=>"https://www.youtube.com/watch?v=9oW727OjSAA&t=1725s"}, "commit"=>"登録"}
+Completed 500 Internal Server Error in 1613ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `creator_id' for #<VideosController:0x00007fae13135e48>
+Did you mean?  create):
+  
+app/controllers/videos_controller.rb:16:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnCreatorIdToVideo (20200827014044)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (17.4ms)[0m  [1m[35mALTER TABLE "creator_id" ADD "video" integer[0m
+  ↳ db/migrate/20200827014044_add_column_creator_id_to_video.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnCreatorIdToVideo (20200827014044)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "video" ADD "creator_id" integer[0m
+  ↳ db/migrate/20200827014044_add_column_creator_id_to_video.rb:3
+  [1m[35m (20.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnCreatorIdToVideo (20200827014044)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (40.4ms)[0m  [1m[35mALTER TABLE "videos" ADD "creator_id" integer[0m
+  ↳ db/migrate/20200827014044_add_column_creator_id_to_video.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200827014044"]]
+  ↳ bin/rails:9
+  [1m[35m (46.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/videos" for ::1 at 2020-08-27 11:01:28 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+/y34xoc151Zr2M71IgQULWZpA3/aR71qW0bVBPBh8dm/3EjDRacFCFizaLVXFQSSk7oekQu4mlEO1X/dcFcfA==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"", "url"=>"https://www.youtube.com/watch?v=9oW727OjSAA&t=1725s"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:17
+  [1m[36mVideo Create (1.1ms)[0m  [1m[32mINSERT INTO "videos" ("title", "description", "url", "created_at", "updated_at", "creator_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "first post"], ["description", "making "], ["url", "https://www.youtube.com/watch?v=9oW727OjSAA&t=1725s"], ["created_at", "2020-08-27 02:01:29.340955"], ["updated_at", "2020-08-27 02:01:29.340955"], ["creator_id", 1]]
+  ↳ app/controllers/videos_controller.rb:17
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:17
+Redirected to http://localhost:3000/videos
+Completed 302 Found in 283ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 11:01:29 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 1658ms (Views: 1596.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:01:33 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 244ms (Views: 178.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:35:25 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 423ms (Views: 194.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:36:22 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 117ms (Views: 107.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:38:36 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.8ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `match' for nil:NilClass):
+  
+app/controllers/videos_controller.rb:9:in `show'
+Started GET "/videos/1" for ::1 at 2020-08-27 11:38:49 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `match' for nil:NilClass):
+  
+app/controllers/videos_controller.rb:9:in `show'
+Started GET "/videos/1" for ::1 at 2020-08-27 11:39:21 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `match' for nil:NilClass):
+  
+app/controllers/videos_controller.rb:9:in `show'
+Started GET "/videos/1" for ::1 at 2020-08-27 11:39:32 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (4.8ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 798ms (Views: 334.7ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:40:17 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.7ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 627ms (Views: 233.7ms | ActiveRecord: 70.7ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:41:10 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 625ms (Views: 316.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 11:42:14 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 299ms (Views: 280.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:42:15 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (1.6ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 914ms (Views: 905.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/videos/new" for ::1 at 2020-08-27 11:42:23 +0900
+Processing by VideosController#new as HTML
+  Rendering videos/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (3.9ms)
+  Rendered videos/new.html.erb within layouts/application (300.8ms)
+Completed 200 OK in 630ms (Views: 607.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 11:44:29 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (343.7ms)
+Completed 200 OK in 672ms (Views: 486.7ms | ActiveRecord: 142.0ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:44:31 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 523ms (Views: 473.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 11:45:09 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 411ms (Views: 379.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 11:45:11 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:7
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 359ms (Views: 342.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 11:47:45 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.7ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 292ms (Views: 248.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 12:02:40 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (318.2ms)
+Completed 200 OK in 1153ms (Views: 1018.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 12:04:03 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 61.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:04:05 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 201ms (Views: 158.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:04:06 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `require_signed_in' for #<VideosController:0x00007fb087a7b4c8>
+Did you mean?  require_dependency):
+  
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/videos/1" for ::1 at 2020-08-27 12:04:21 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 131ms (Views: 117.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-08-27 12:04:28 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 47ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-27 12:04:28 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 48ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show" for ::1 at 2020-08-27 12:05:04 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/videos" for ::1 at 2020-08-27 12:05:12 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 92ms (Views: 86.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:05:13 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 193ms (Views: 183.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:05:25 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `require_signed_in' for #<VideosController:0x00007fb0866d86c8>
+Did you mean?  require_dependency):
+  
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/videos/1" for ::1 at 2020-08-27 12:05:29 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 94ms (Views: 76.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:07:12 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:27
+  Rendering videos/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered videos/edit.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 119ms (Views: 76.7ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/videos/1" for ::1 at 2020-08-27 12:07:45 +0900
+Processing by VideosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h4Tz6GiB5WCzcPX92s5RZ/m1Iid4W+pmO3p+9G7h/aFIOPgj/UPRKfA6u/EhyhejmwOO1MKVHVSj1ltADQaR0w==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"", "url"=>"https://www.youtube.com/watch?v=IezXEmTHFcs"}, "commit"=>"修正", "id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[36mVideo Update (0.7ms)[0m  [1m[33mUPDATE "videos" SET "url" = ?, "updated_at" = ? WHERE "videos"."id" = ?[0m  [["url", "https://www.youtube.com/watch?v=IezXEmTHFcs"], ["updated_at", "2020-08-27 03:07:45.020149"], ["id", 1]]
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 13ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:07:45 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 157ms (Views: 148.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:07:48 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:27
+  Rendering videos/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered videos/edit.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 115ms (Views: 104.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/videos/1" for ::1 at 2020-08-27 12:07:50 +0900
+Processing by VideosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QlEEJgQTVOR7EQ2p6OJDu+VgN4ZiexDr5HBLKqDVyYyN7Q/tkdFgrThbQ6UT5gV/h9abddi159l83G6ewzKl/g==", "video"=>{"title"=>"first post", "description"=>"making ", "recipe_id"=>"1", "url"=>"https://www.youtube.com/watch?v=IezXEmTHFcs"}, "commit"=>"修正", "id"=>"1"}
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[36mVideo Update (5.2ms)[0m  [1m[33mUPDATE "videos" SET "recipe_id" = ?, "updated_at" = ? WHERE "videos"."id" = ?[0m  [["recipe_id", 1], ["updated_at", "2020-08-27 03:07:50.607886"], ["id", 1]]
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 21ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:07:50 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 105ms (Views: 95.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:08:57 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (2.6ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:27
+  Rendering videos/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered videos/edit.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 218ms (Views: 126.4ms | ActiveRecord: 4.3ms)
+
+
+Started PATCH "/videos/1" for ::1 at 2020-08-27 12:09:03 +0900
+Processing by VideosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t+pdkWWWOYXmHxVyo4SGSzbWLvLv+FHqkXKbuTay20h4VlZa8FQNzKVVW35YgMCPVGCCAVU2ptgJ3r4NVVW3Og==", "video"=>{"title"=>"", "description"=>"making ", "recipe_id"=>"1", "url"=>"https://www.youtube.com/watch?v=IezXEmTHFcs"}, "commit"=>"修正", "id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[36mVideo Update (1.5ms)[0m  [1m[33mUPDATE "videos" SET "title" = ?, "updated_at" = ? WHERE "videos"."id" = ?[0m  [["title", ""], ["updated_at", "2020-08-27 03:09:03.211121"], ["id", 1]]
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 17ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:09:03 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 151ms (Views: 143.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:09:05 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:27
+  Rendering videos/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered videos/edit.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 164ms (Views: 144.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/videos/1" for ::1 at 2020-08-27 12:09:24 +0900
+Processing by VideosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L8PEgY8DqQHUn3ZVH5PK7QyXrd75wYy6yQkiBwCpz9ngf89KGsGdSJfVOFnkl4wpbiEBLUMPe4hRpQezY06jqw==", "video"=>{"title"=>"唐揚げ", "description"=>"making ", "recipe_id"=>"1", "url"=>"https://www.youtube.com/watch?v=IezXEmTHFcs"}, "commit"=>"修正", "id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[36mVideo Update (2.8ms)[0m  [1m[33mUPDATE "videos" SET "title" = ?, "updated_at" = ? WHERE "videos"."id" = ?[0m  [["title", "唐揚げ"], ["updated_at", "2020-08-27 03:09:24.499936"], ["id", 1]]
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 22ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:09:24 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 169ms (Views: 147.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 12:10:16 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.9ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 95ms (Views: 81.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/videos/1/edit" for ::1 at 2020-08-27 12:10:20 +0900
+Processing by VideosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:27
+  Rendering videos/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.7ms)
+  Rendered videos/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 100ms (Views: 90.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/videos/1" for ::1 at 2020-08-27 12:10:23 +0900
+Processing by VideosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U3zWvLG0aeAkQLUZacFKyCU5F1SVMRdgSGRv6C34YECcwN13JHZdqWcK+xWSxQwMR4+7py//4FLQyEpcTh8MMg==", "video"=>{"title"=>"唐揚げ", "description"=>"making ", "recipe_id"=>"1", "url"=>"https://www.youtube.com/watch?v=IezXEmTHFcs"}, "commit"=>"修正", "id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videos_controller.rb:32
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:10:23 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 121ms (Views: 106.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos/1" for ::1 at 2020-08-27 12:11:20 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    3: <p>レシピ名:<%= @video.title %></p>
+    4: <p>説明:<%= @video.description %></p>
+    5: <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+    6: <p>レシピ名:<%= @recipe.title %></p>
+    7: <p>説明:<%= @recipe.description %></p>
+    8: <p>手順:<%= @recipe.steps %></p>
+    9: <p>材料:<%= @recipe.ingredient %></p>
+  
+app/views/videos/show.html.erb:6:in `_app_views_videos_show_html_erb___728145404387428687_70198073378380'
+Started GET "/videos/1" for ::1 at 2020-08-27 12:12:53 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:10
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 7.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: recipes.recipe_id: SELECT  "recipes".* FROM "recipes" WHERE "recipes"."recipe_id" = ? LIMIT ?):
+  
+app/controllers/videos_controller.rb:10:in `show'
+Started GET "/videos/1" for ::1 at 2020-08-27 12:13:20 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (1.5ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:10
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: recipes.recipe_id: SELECT  "recipes".* FROM "recipes" WHERE "recipes"."recipe_id" = ? LIMIT ?):
+  
+app/controllers/videos_controller.rb:10:in `show'
+Started GET "/videos/1" for ::1 at 2020-08-27 12:14:09 +0900
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVideo Load (1.0ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videos_controller.rb:10
+  Rendering videos/show.html.erb within layouts/application
+  Rendered videos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 162ms (Views: 93.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 12:14:36 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 87ms (Views: 83.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:01:09 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 195ms (Views: 150.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1" for ::1 at 2020-08-27 13:01:13 +0900
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (6.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 309ms (Views: 250.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/recipes/1" for ::1 at 2020-08-27 13:01:52 +0900
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:22
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (967.4ms)
+Completed 500 Internal Server Error in 1266ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_recipe_path' for #<#<Class:0x00007fb0865397e0>:0x00007fb08cabc720>
+Did you mean?  new_recipe_path):
+     6: <p>材料:<%= @recipe.ingredient %></p>
+     7: 
+     8: 
+     9: <%= link_to "レシピを修正する", edit_recipe_path(@recipe) %>
+    10: <%= link_to "レシピ一覧に戻る", recipes_path %>
+  
+app/views/recipes/show.html.erb:9:in `_app_views_recipes_show_html_erb___3762502468829663388_70198125521040'
+Started GET "/videos" for ::1 at 2020-08-27 13:02:14 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 481ms (Views: 468.7ms | ActiveRecord: 0.3ms)
+
+
