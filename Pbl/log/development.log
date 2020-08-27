@@ -1213,3 +1213,450 @@ Processing by VideosController#index as HTML
 Completed 200 OK in 481ms (Views: 468.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/videos" for ::1 at 2020-08-27 13:36:38 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (164.8ms)
+Completed 200 OK in 1712ms (Views: 1644.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 13:49:24 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (156.5ms)
+  [1m[36mUser Load (17.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 500 Internal Server Error in 814ms (ActiveRecord: 53.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `login_name' for #<User:0x00007fef491f44c0>):
+    24:                 <ul class="nav navbar-nav navbar-right">
+    25: 
+    26:                   <li class="dropdown">
+    27:                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><%= current_user.login_name %><span class="caret"></span></a>
+    28:                     <ul class="dropdown-menu" role="menu">
+    29:                       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    30:                       <li><%= link_to "マイアカウント", my_page_path, target: :_blank %></li>
+  
+app/views/layouts/application.html.erb:27:in `_app_views_layouts_application_html_erb___3207323630793599103_70332800152800'
+Started GET "/videos" for ::1 at 2020-08-27 13:49:44 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 500 Internal Server Error in 1226ms (ActiveRecord: 21.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `my_page_path' for #<#<Class:0x00007fef41786558>:0x00007fef4590eae8>):
+    27:                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><%= current_user.name %><span class="caret"></span></a>
+    28:                     <ul class="dropdown-menu" role="menu">
+    29:                       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    30:                       <li><%= link_to "マイアカウント", my_page_path, target: :_blank %></li>
+    31:                     </ul>
+    32:                   </li>
+    33: 
+  
+app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3207323630793599103_70332788429100'
+Started GET "/videos" for ::1 at 2020-08-27 13:49:57 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (19.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 586ms (Views: 560.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 13:53:55 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (21.8ms)
+Started GET "/videos" for ::1 at 2020-08-27 13:54:01 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (7.2ms)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb__3854905218134611270_70352283252380 at /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/views/layouts/application.html.erb:8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 19637ms (Views: 19608.4ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 13955ms (Views: 13940.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:54:19 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (43.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 417ms (Views: 383.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:54:20 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 285ms (Views: 271.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:54:23 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 350ms (Views: 337.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:54:26 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 215ms (Views: 211.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 13:54:33 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 362ms (Views: 346.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes" for ::1 at 2020-08-27 13:54:38 +0900
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 354ms (Views: 345.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 13:55:31 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.1ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 2519ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/config
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/images
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/javascripts
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/stylesheets
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/node_modules
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/stylesheets
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/stylesheets):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:17
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3854905218134611270_70352320409260'
+Started GET "/videos" for ::1 at 2020-08-27 13:57:42 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (125.8ms)
+Completed 500 Internal Server Error in 2972ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/config
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/images
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/javascripts
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/assets/stylesheets
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.3/lib/assets/compiled
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.3/app/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.3/lib/assets/compiled
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/node_modules
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/stylesheets
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/javascripts
+  /Users/K/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/bootstrap-4.1.3/assets/stylesheets):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.scss:18
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2281753461607241950_70192912382300'
+Started GET "/videos" for ::1 at 2020-08-27 13:57:56 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.0ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (23.6ms)
+DEPRECATION WARNING: autoprefixer-rails was deprected. Migration guide:
+https://github.com/ai/autoprefixer-rails/wiki/Deprecated (called from _app_views_layouts_application_html_erb___2281753461607241950_70192976594060 at /Users/K/cookpad/cookpad-internship-2020-summer-pbl/Pbl/app/views/layouts/application.html.erb:8)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 7925ms (Views: 7915.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:00:49 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 477ms (Views: 470.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:06:14 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 5461ms (Views: 5454.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:08:03 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 285ms (Views: 260.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:08:05 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.7ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 266ms (Views: 236.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:08:06 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (2.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 195ms (Views: 187.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:09:06 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 473ms (Views: 466.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:09:12 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 325ms (Views: 302.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:09:23 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 512ms (Views: 506.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:09:38 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (20.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 434ms (Views: 427.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:09:54 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (1.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 489ms (Views: 473.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:10:36 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 306ms (Views: 299.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:10:37 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 215ms (Views: 202.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:10:38 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 192ms (Views: 186.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:13:54 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 498ms (Views: 485.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:13:56 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 390ms (Views: 377.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:15:14 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 376ms (Views: 370.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:15:26 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.6ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 451ms (Views: 439.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/videos" for ::1 at 2020-08-27 14:17:15 +0900
+Processing by VideosController#index as HTML
+  Rendering videos/index.html.erb within layouts/application
+  [1m[36mVideo Load (0.5ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/videos/index.html.erb:3
+  Rendered videos/index.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:13
+Completed 200 OK in 449ms (Views: 427.6ms | ActiveRecord: 0.6ms)
+
+
