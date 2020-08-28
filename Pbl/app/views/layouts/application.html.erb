@@ -7,6 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
@@ -14,7 +19,7 @@
       <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="navbar-brand" >
-            <%= link_to "COOKCAST", videos_path %>
+            <%= link_to "COOKCAST", videos_path%>
           </div>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
             <span class="navbar-toggler-icon"></span>
@@ -24,18 +29,19 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <div class="nav-link">
-                  <%= link_to "レシピから動画を探す", recipes_path %> 
+                  <%= link_to "レシピから動画を探す", recipes_path, class: 'btn btn-default',:style=>"color:black;"%> 
                   <span class="sr-only">(現位置)</span>
                 </div>
               </li>
             </ul>
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ドロップダウン
+                  <%= current_user.name %>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">メニュー1</a>
-                  <a class="dropdown-item" href="#">メニュー2</a>
+                  <%= link_to "マイページ", "#", class: 'btn btn-default',:style=>"color:black;"%> 
+                  <%= link_to "ログアウト", destroy_user_session_path, class: 'btn btn-default',:style=>"color:black;"%> 
+                  
                 </div>
               </div>
           </div><!-- /.navbar-collapse -->

@@ -1,13 +1,122 @@
-<h1>動画詳細</h1>
+<section class="sct-color-1 slice">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+            <br>
+                <h2 style="color: #87cefa"><%= @video.title %></h2>
+                <iframe width="720" height="405" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+                <div class="items">
+                    <ul class="float-right">
+                        <% if @video.favorited_by?(current_user) %>
+                        <li class="list-inline-item">
+                            
+                            <%= link_to video_video_favorites_path(@video), method: :delete do %>
+                            いいね
+                                <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                                
+                            <% end %>
+                            <%= @video.video_favorites.count %>
+                        </li>
+                        <% else %>
+                        <li class="list-inline-item">
+                            <%= link_to video_video_favorites_path(@video), method: :post do %>
+                            いいね
+                                <i class="fa fa-heart" aria-hidden="true" style="color: black;"></i>
+                            <% end %>
+                            <%= @video.video_favorites.count %>
+                        </li>
+                        <% end %>
+                        <li class="list-inline-item">
+                            <i class="fa fa-comment"></i>
+                            <%= @video.video_comments.count %>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar"></i>
+                            <%= @video.created_at.strftime('%Y/%m/%d') %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        説明
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"><%= @video.description %></p>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    
+                    
+                    <%= form_for [@video, @video_comment] do |f| %>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <%= f.text_area :comments, rows:'2', class: "form-control",placeholder: "コメントを書く" %>
+                            </div>
+                            <div class="col-sm-12">
+                                <%= f.submit "送信する", class: "btn btn-md btn-base-1 mt-20 float-right" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="section-title-wrapper style-1 v1 mt-30" id="divAddComment">
+                    <h3 class="section-title left">
+                        <span>コメント</span>
+                    </h3>
+                </div>
+                <hr>
+                
+                <ol>
+                    <% @video.video_comments.each do |post_comment| %>              
+                    <li>
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <span>
+                                    <%= post_comment.user.name %>
+                                    <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+                                </span>
+                                <div>
+                                    <%= post_comment.comments %>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                            <% if post_comment.user == current_user %>
+                                <div>
+                                    <%= link_to "削除", video_video_comment_path(post_comment.video, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+                                </div>
+                            <%end%>
+                            <br>
+                        </div>
+                        
+                    </li>
+                    <% end %>
 
-<p>動画名:<%= @video.title %></p>
-<p>説明:<%= @video.description %></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-<p>レシピ名:<%= @recipe.title %></p>
-<p>説明:<%= @recipe.description %></p>
-<p>手順:<%= @recipe.steps %></p>
-<p>材料:<%= @recipe.ingredient %></p>
-
-
-<%= link_to "動画を修正する", edit_video_path(@video) %>
-<%= link_to "動画一覧に戻る", videos_path %>
+                </ol>
+                
+            </div>
+            <div class="col-md-4">
+            <br>
+                <h2 style="color: #87cefa">レシピ</h2>
+                <h4>材料</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text"><%= @recipe.ingredient %></p>
+                    </div>
+                </div>
+                <br>
+                <h4>作り方</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text"><%= @recipe.steps %></p>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                <%= link_to "このレシピを使った他の動画を見る", videos_recipe_path(@recipe), class: "btn btn-primary float-center"%>
+                </div>
+                <br>
+                <%= link_to "このレシピを使った動画を投稿する", new_video_path(recipe_id: @recipe.id), class: "btn btn-success pull-right"%>
+            </div>
+        </div>
+    </div>
+</section>

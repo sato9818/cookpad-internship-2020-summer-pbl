@@ -8,6 +8,12 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new
     end
 
+    def videos
+        @recipe = Recipe.find(params[:id])
+        @videos = @recipe.videos
+        @video = Video.find_by(creator_id: @recipe.creator_id)
+    end
+
     def create
         @recipe = Recipe.new(recipe_params)
         @recipe.creator_id = current_user.id

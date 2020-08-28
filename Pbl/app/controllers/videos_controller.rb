@@ -8,10 +8,15 @@ class VideosController < ApplicationController
         @video = Video.find(params[:id])
         @video_id = @video.url.gsub(/https:\/\/www.youtube.com\/watch\?v=(\w+)/){"#{$1}"}.first(11)
         @recipe = Recipe.find(@video.recipe_id)
+        @video_comment = VideoComment.new
     end
 
     def new
         @video = Video.new
+        # binding.irb
+        if params[:recipe_id].present?
+            @video.recipe_id = params[:recipe_id]
+        end
     end
 
     def create

@@ -1,9 +1,14 @@
 <%= form_for(@video, url: videos_path) do |f| %>
     <p><%= f.label :"動画登録"%></p>
     <%= render "devise/shared/error_messages", resource: @video %>
+    <% if @video.recipe_id.present? %>
+        <%= f.text_field :recipe_id, value: @video.recipe_id %>
+        <p><lavel>レシピ: </lavel><%= @video.recipe.title %></p>
+    <% else %>
+        <p><lavel>recipe_id</lavel><%= f.text_field :recipe_id %></p>
+    <% end%>
     <p><lavel>title</lavel><%= f.text_field :title %></p>
     <p><lavel>description</lavel><%= f.text_area :description %></p>
-    <p><lavel>recipe_id</lavel><%= f.text_field :recipe_id %></p>
     <p><lavel>youtube_url</lavel><%= f.text_field :url %></p>
     
 

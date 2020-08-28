@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <br>
+            <h1>レシピ<%= @recipe.title %>の動画一覧</h1>
+            <br>
+            <h3>レシピ作成者の動画</h3>
+            <hr>
+            <% if @video.present? %>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                            <div class="p-0">
+                                <%= link_to @video.title, video_path(@video.id) %>
+                            </div>
+                            <div class="p-0">
+                                <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                                <%= @video.video_favorites.count %>
+                                <i class="fa fa-comment"></i>
+                                <%= @video.video_comments.count %>
+                                <i class="fa fa-calendar"></i>
+                                <%= @video.created_at.strftime('%Y/%m/%d') %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <% else %>
+                <h3> レシピ作成者の動画はありません。</h3>
+            <% end %>
+            <br>
+            <h3>その他の動画</h3>
+            <hr>
+                <% @videos.each do |video| %>
+                <div class="col-md-6">
+                    <% if video != @video %>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-around">
+                                    <div class="p-0">
+                                        <%= link_to video.title, video_path(video.id) %>
+                                    </div>
+                                    <div class="p-0">
+                                        <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                                        <%= video.video_favorites.count %>
+                                        <i class="fa fa-comment"></i>
+                                        <%= video.video_comments.count %>
+                                        <i class="fa fa-calendar"></i>
+                                        <%= video.created_at.strftime('%Y/%m/%d') %>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                    <% end %>
+                </div>
+                <% end %>
+                <%= link_to "レシピを新しく作る", new_recipe_path %>
+        </div>
+    </div>
+</div>
