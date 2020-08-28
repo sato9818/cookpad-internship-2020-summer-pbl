@@ -7,7 +7,7 @@
             <h3>レシピ作成者の動画</h3>
             <hr>
             <% if @video.present? %>
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-around">
@@ -21,6 +21,8 @@
                                 <%= @video.video_comments.count %>
                                 <i class="fa fa-calendar"></i>
                                 <%= @video.created_at.strftime('%Y/%m/%d') %>
+                                by
+                                <%= User.find(@video.creator_id).name %>
                             </div>
                         </div>
                     </div>
@@ -34,7 +36,7 @@
             <h3>その他の動画</h3>
             <hr>
                 <% @videos.each do |video| %>
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <% if video != @video %>
                         <div class="card">
                             <div class="card-body">
@@ -49,6 +51,8 @@
                                         <%= video.video_comments.count %>
                                         <i class="fa fa-calendar"></i>
                                         <%= video.created_at.strftime('%Y/%m/%d') %>
+                                        by
+                                        <%= User.find(video.creator_id).name %>
                                     </div>
                                 </div>
 

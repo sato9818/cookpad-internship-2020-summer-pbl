@@ -3,6 +3,9 @@
         <div class="row">
             <div class="col-md-8">
             <br>
+            <% if @video.creator_id == @recipe.creator_id %>
+                レシピ作成者の動画
+            <%end%>
                 <h2 style="color: #87cefa"><%= @video.title %></h2>
                 <iframe width="720" height="405" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
                 <div class="items">
@@ -45,9 +48,62 @@
                     </div>
                 </div>
                 <hr>
+                <h3>同じレシピの他の動画</h3>
+                    
+                <hr>
+                <% @videos.first(5).each do |video| %>
+                <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-around">
+                                    <div class="p-0">
+                                        <%= link_to video.title, video_path(video.id) %>
+                                    </div>
+                                    <div class="p-0">
+                                        <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                                        <%= video.video_favorites.count %>
+                                        <i class="fa fa-comment"></i>
+                                        <%= video.video_comments.count %>
+                                        <i class="fa fa-calendar"></i>
+                                        <%= video.created_at.strftime('%Y/%m/%d') %>
+                                        by
+                                        <%= User.find(video.creator_id).name %>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                </div>
+                <% end %>
                 <div>
-                    
-                    
+                <%= link_to "もっと見る", videos_recipe_path(@recipe) %>
+                </div>
+                
+                
+            </div>
+            <div class="col-md-4">
+            <br>
+                <h2 style="color: #87cefa">レシピ</h2>
+                <h4>材料</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text"><%= @recipe.ingredient %></p>
+                    </div>
+                </div>
+                <br>
+                <h4>作り方</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text"><%= @recipe.steps %></p>
+                    </div>
+                </div>
+                <br>
+                <%= link_to "このレシピを使った動画を投稿する", new_video_path(recipe_id: @recipe.id), class: "btn btn-success pull-right"%>
+                <hr>
+                
+                
+                <div>
                     <%= form_for [@video, @video_comment] do |f| %>
                         <div class="row">
                             <div class="col-sm-12">
@@ -65,6 +121,7 @@
                     </h3>
                 </div>
                 <hr>
+                
                 
                 <ol>
                     <% @video.video_comments.each do |post_comment| %>              
@@ -85,37 +142,15 @@
                                     <%= link_to "削除", video_video_comment_path(post_comment.video, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
                                 </div>
                             <%end%>
-                            <br>
+                            </div>
+                            
                         </div>
-                        
+                        <br>
                     </li>
                     <% end %>
 
                 </ol>
                 
-            </div>
-            <div class="col-md-4">
-            <br>
-                <h2 style="color: #87cefa">レシピ</h2>
-                <h4>材料</h4>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text"><%= @recipe.ingredient %></p>
-                    </div>
-                </div>
-                <br>
-                <h4>作り方</h4>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text"><%= @recipe.steps %></p>
-                    </div>
-                </div>
-                <hr>
-                <div>
-                <%= link_to "このレシピを使った他の動画を見る", videos_recipe_path(@recipe), class: "btn btn-primary float-center"%>
-                </div>
-                <br>
-                <%= link_to "このレシピを使った動画を投稿する", new_video_path(recipe_id: @recipe.id), class: "btn btn-success pull-right"%>
             </div>
         </div>
     </div>

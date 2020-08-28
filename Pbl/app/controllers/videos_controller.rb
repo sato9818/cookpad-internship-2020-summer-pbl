@@ -9,6 +9,7 @@ class VideosController < ApplicationController
         @video_id = @video.url.gsub(/https:\/\/www.youtube.com\/watch\?v=(\w+)/){"#{$1}"}.first(11)
         @recipe = Recipe.find(@video.recipe_id)
         @video_comment = VideoComment.new
+        @videos = @recipe.videos.where.not(id: @video.id)
     end
 
     def new
@@ -23,7 +24,7 @@ class VideosController < ApplicationController
         @video = Video.new(video_params)
         @video.creator_id = current_user.id
         if @video.save
-            redirect_to videos_path
+            redirect_to video_path(@video)
         else
             render "new"
         end

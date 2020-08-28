@@ -11,14 +11,15 @@ class RecipesController < ApplicationController
     def videos
         @recipe = Recipe.find(params[:id])
         @videos = @recipe.videos
-        @video = Video.find_by(creator_id: @recipe.creator_id)
+        @video = @videos.find_by(creator_id: @recipe.creator_id)
+        @recipe_creator = User.find(@video.creator_id)
     end
 
     def create
         @recipe = Recipe.new(recipe_params)
         @recipe.creator_id = current_user.id
         if @recipe.save
-            redirect_to recipes_path
+            redirect_to recipe_path(@recipe)
         else
             render "new"
         end
